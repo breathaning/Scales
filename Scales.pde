@@ -84,4 +84,3 @@ void scale(int x, int y, float rotation, float size) {
   rotate(-rotation);
   translate(-x, -y);
 }
-
