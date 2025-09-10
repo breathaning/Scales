@@ -1,9 +1,4 @@
-int PADDING = -20;
-int X_SPACING = 40;
-int X_INTERVAL_OFFSET = X_SPACING / 2;
-int Y_SPACING = 20;
-float BASE_SIZE = 5;
-float FOCAL_SMOOTH = 10;
+
 
 float focalX = 0;
 float focalY = 0;
@@ -13,7 +8,13 @@ void setup() {
 }
 
 void draw() {
- background(255, 255, 255);
+ background(128, 128, 128);
+int PADDING = -20;
+int X_SPACING = 40;
+int X_INTERVAL_OFFSET = X_SPACING / 2;
+int Y_SPACING = 20;
+float BASE_SIZE = 5;
+float FOCAL_SMOOTH = 10;
  //focalX += (mouseX - focalX) / FOCAL_SMOOTH;
  //focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / 500 * 500;
@@ -84,6 +85,7 @@ void scale(int x, int y, float rotation, float size) {
   //rotate(-rotation);
   //translate(-x, -y);
 }
+
 
 
 
