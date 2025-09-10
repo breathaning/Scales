@@ -13,7 +13,7 @@ void setup() {
 }
 
 void draw() {
- background(255, 255, 255);
+ background(128, 128, 128);
  focalX += (mouseX - focalX) / FOCAL_SMOOTH;
  focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / width * 500;
@@ -84,3 +84,4 @@ void scale(int x, int y, float rotation, float size) {
   rotate(-rotation);
   translate(-x, -y);
 }
+
