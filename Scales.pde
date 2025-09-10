@@ -18,8 +18,8 @@ void draw() {
  //focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / width * 500;
  float focalYInfluence = (float)focalY / height * 500;
- float rotationalInfluenceLayerOne = (float)(Math.sin((float)(millis()) / 1000)) / 8;
- float rotationalInfluenceLayerTwo = (float)(Math.sin((float)(millis()) / 1000 + (PI / 4))) / 8;
+ float rotationalInfluenceLayerOne = 0.0;
+ float rotationalInfluenceLayerTwo = 0.0;
  for (int y = PADDING; y <= height - PADDING; y += Y_SPACING) {
    int intervalOffset;
    boolean isOffset = ((y - PADDING) % (Y_SPACING * 2) == 0);
@@ -84,3 +84,4 @@ void scale(int x, int y, float rotation, float size) {
   rotate(-rotation);
   translate(-x, -y);
 }
+
