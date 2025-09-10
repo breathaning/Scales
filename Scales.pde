@@ -13,9 +13,9 @@ void setup() {
 }
 
 void draw() {
- background(128, 128, 128);
- focalX += (mouseX - focalX) / FOCAL_SMOOTH;
- focalY += (mouseY - focalY) / FOCAL_SMOOTH;
+ background(255, 255, 255);
+ //focalX += (mouseX - focalX) / FOCAL_SMOOTH;
+ //focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / width * 500;
  float focalYInfluence = (float)focalY / height * 500;
  float rotationalInfluenceLayerOne = (float)(Math.sin((float)(millis()) / 1000)) / 8;
@@ -84,4 +84,3 @@ void scale(int x, int y, float rotation, float size) {
   rotate(-rotation);
   translate(-x, -y);
 }
-
