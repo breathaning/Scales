@@ -59,9 +59,9 @@ void draw() {
 }
 
 void scale(int x, int y, float rotation, float size) {
-  translate(x, y);
-  rotate(rotation);
-  ellipse(0, 0, size * 10, size * 15);
+  //translate(x, y);
+  //rotate(rotation);
+  ellipse(x, y, size * 10, size * 15);
   //beginShape();
   //vertex(-10 * size, -10 * size);
   //quadraticVertex(0, 0, 10, -10 * size);
@@ -81,7 +81,8 @@ void scale(int x, int y, float rotation, float size) {
   //curveVertex(-10 * size, -10 * size);
   //vertex(-10 * size, -10 * size);
   //endShape(CLOSE);
-  rotate(-rotation);
-  translate(-x, -y);
+  //rotate(-rotation);
+  //translate(-x, -y);
 }
+
 
