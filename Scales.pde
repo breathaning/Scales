@@ -16,11 +16,11 @@ void draw() {
  background(255, 255, 255);
  //focalX += (mouseX - focalX) / FOCAL_SMOOTH;
  //focalY += (mouseY - focalY) / FOCAL_SMOOTH;
- float focalXInfluence = (float)focalX / width * 500;
- float focalYInfluence = (float)focalY / height * 500;
+ float focalXInfluence = (float)focalX / 500 * 500;
+ float focalYInfluence = (float)focalY / 500 * 500;
  float rotationalInfluenceLayerOne = 0.0;
  float rotationalInfluenceLayerTwo = 0.0;
- for (int y = PADDING; y <= height - PADDING; y += Y_SPACING) {
+ for (int y = PADDING; y <= 500 - PADDING; y += Y_SPACING) {
    int intervalOffset;
    boolean isOffset = ((y - PADDING) % (Y_SPACING * 2) == 0);
    if (isOffset) {
@@ -28,11 +28,11 @@ void draw() {
    } else {
      intervalOffset = 0;
    }
-   for (int x = PADDING; x <= width - PADDING; x += X_SPACING) {
+   for (int x = PADDING; x <= 500 - PADDING; x += X_SPACING) {
      fill(
        (x + y) / 2.5 - 250 + focalXInfluence, 
        (2 * y - x) / 2.5 - 250 + focalYInfluence, 
-       (width - y - x) / 2.5 - 250 + focalYInfluence
+       (500 - y - x) / 2.5 - 250 + focalYInfluence
      );
      int deltaX = (int)focalX - x;
      int deltaY = (int)focalY - y;
@@ -84,5 +84,6 @@ void scale(int x, int y, float rotation, float size) {
   //rotate(-rotation);
   //translate(-x, -y);
 }
+
 
 
