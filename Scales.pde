@@ -1,3 +1,4 @@
+
 int PADDING = -30;
 int X_SPACING = 60;
 int X_INTERVAL_OFFSET = X_SPACING / 2;
@@ -33,7 +34,7 @@ void draw() {
         (x + y) / 2.5 - 250 + focalXInfluence,
         (2 * y - x) / 2.5 - 250 + focalYInfluence,
         (width - y - x) / 2.5 - 250 + focalYInfluence
-        );
+      );
       int deltaX = (int) focalX - x;
       int deltaY = (int) focalY - y;
       float distance = (float) Math.sqrt(deltaX * deltaX + deltaY * deltaY);
@@ -54,15 +55,15 @@ void draw() {
         posY,
         normalizedDistance + rotationOffset,
         BASE_SIZE * distanceMultiplier
-        );
+      );
     }
   }
 }
 
 void scale(int x, int y, float rotation, float size) {
+  pushMatrix();
   translate(x, y);
   rotate(rotation);
-  // ellipse(0, 0, size * 10, size * 15);
   beginShape();
   vertex(0, 15 * size);
   vertex(-3 * size, 5 * size);
@@ -71,6 +72,7 @@ void scale(int x, int y, float rotation, float size) {
   vertex(5 * size, -10 * size);
   vertex(3 * size, 5 * size);
   vertex(0, 15 * size);
+  // ellipse(0, 0, size * 10, size * 15);
   //vertex(-10 * size, -10 * size);
   //quadraticVertex(0, 0, 10, -10 * size);
   //vertex(10 * size, 10 * size);
@@ -89,8 +91,7 @@ void scale(int x, int y, float rotation, float size) {
   //curveVertex(-10 * size, -10 * size);
   //vertex(-10 * size, -10 * size);
   endShape(CLOSE);
-  rotate(-rotation);
-  translate(-x, -y);
+  popMatrix();
 }
 
 int sign(int n) {
