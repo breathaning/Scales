@@ -15,8 +15,8 @@ int X_INTERVAL_OFFSET = X_SPACING / 2;
 int Y_SPACING = 20;
 float BASE_SIZE = 5;
 float FOCAL_SMOOTH = 10;
- //focalX += (mouseX - focalX) / FOCAL_SMOOTH;
- //focalY += (mouseY - focalY) / FOCAL_SMOOTH;
+ focalX += (mouseX - focalX) / FOCAL_SMOOTH;
+ focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / 500 * 500;
  float focalYInfluence = (float)focalY / 500 * 500;
  float rotationalInfluenceLayerOne = 0.0;
@@ -92,6 +92,7 @@ int sign(int n) {
   }
   return n / Math.abs(n);
 }
+
 
 
 
