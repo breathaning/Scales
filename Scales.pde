@@ -1,4 +1,9 @@
-
+int PADDING = -20;
+int X_SPACING = 40;
+int X_INTERVAL_OFFSET = X_SPACING / 2;
+int Y_SPACING = 20;
+float BASE_SIZE = 5;
+float FOCAL_SMOOTH = 10;
 
 float focalX = 0;
 float focalY = 0;
@@ -9,12 +14,6 @@ void setup() {
 
 void draw() {
  background(128, 128, 128);
-int PADDING = -20;
-int X_SPACING = 40;
-int X_INTERVAL_OFFSET = X_SPACING / 2;
-int Y_SPACING = 20;
-float BASE_SIZE = 5;
-float FOCAL_SMOOTH = 10;
  focalX += (mouseX - focalX) / FOCAL_SMOOTH;
  focalY += (mouseY - focalY) / FOCAL_SMOOTH;
  float focalXInfluence = (float)focalX / 500 * 500;
@@ -60,30 +59,30 @@ float FOCAL_SMOOTH = 10;
 }
 
 void scale(int x, int y, float rotation, float size) {
-  //translate(x, y);
-  //rotate(rotation);
-  ellipse(x, y, size * 10, size * 15);
-  //beginShape();
-  //vertex(-10 * size, -10 * size);
-  //quadraticVertex(0, 0, 10, -10 * size);
-  //vertex(10 * size, 10 * size);
-  //quadraticVertex(0,  0, -10, 10 * size);
-  //vertex(-10 * size, -10 * size);
-  //curveVertex(-10 * size, -10 * size);
-  //curveVertex(-9 * size, -10 * size);
-  //curveVertex(0 * size, -5 * size);
-  //curveVertex(9 * size, -10 * size);
-  //curveVertex(10 * size, -10 * size);
-  //curveVertex(10 * size, 10 * size);
-  //curveVertex(9 * size, 10 * size);
-  //curveVertex(0 * size, 5 * size);
-  //curveVertex(-9 * size, 10 * size);
-  //curveVertex(-10 * size, 10 * size);
-  //curveVertex(-10 * size, -10 * size);
-  //vertex(-10 * size, -10 * size);
-  //endShape(CLOSE);
-  //rotate(-rotation);
-  //translate(-x, -y);
+  translate(x, y);
+  rotate(rotation);
+  //ellipse(0, 0, size * 10, size * 15);
+  beginShape();
+  vertex(-10 * size, -10 * size);
+  quadraticVertex(0, 0, 10, -10 * size);
+  vertex(10 * size, 10 * size);
+  quadraticVertex(0,  0, -10, 10 * size);
+  vertex(-10 * size, -10 * size);
+  curveVertex(-10 * size, -10 * size);
+  curveVertex(-9 * size, -10 * size);
+  curveVertex(0 * size, -5 * size);
+  curveVertex(9 * size, -10 * size);
+  curveVertex(10 * size, -10 * size);
+  curveVertex(10 * size, 10 * size);
+  curveVertex(9 * size, 10 * size);
+  curveVertex(0 * size, 5 * size);
+  curveVertex(-9 * size, 10 * size);
+  curveVertex(-10 * size, 10 * size);
+  curveVertex(-10 * size, -10 * size);
+  vertex(-10 * size, -10 * size);
+  endShape(CLOSE);
+  rotate(-rotation);
+  translate(-x, -y);
 }
 
 int sign(int n) {
@@ -92,6 +91,7 @@ int sign(int n) {
   }
   return n / Math.abs(n);
 }
+
 
 
 
