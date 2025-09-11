@@ -39,8 +39,8 @@ float FOCAL_SMOOTH = 10;
      int deltaY = (int)focalY - y;
      float distance = (float)Math.sqrt(deltaX * deltaX + deltaY * deltaY);
      
-     int posX = x + intervalOffset - (int)(distance / 250 * Math.sqrt(Math.abs(deltaX) * 10) * Math.signum(deltaX));
-     int posY = y - (int)(distance / 250 * Math.sqrt(Math.abs(deltaY) * 10) * Math.signum(deltaY));
+     int posX = x + intervalOffset - (int)(distance / 250 * Math.sqrt(Math.abs(deltaX) * 10) * sign(deltaX));
+     int posY = y - (int)(distance / 250 * Math.sqrt(Math.abs(deltaY) * 10) * sign(deltaY));
      float distanceMultiplier = (1 + distance / 500);
      float rotationOffset;
      if (isOffset == true) {
@@ -85,6 +85,15 @@ void scale(int x, int y, float rotation, float size) {
   //rotate(-rotation);
   //translate(-x, -y);
 }
+
+int sign(int n) {
+  if (n == 0) {
+    return 0;
+  }
+  return n / Math.abs(n);
+}
+
+
 
 
 
