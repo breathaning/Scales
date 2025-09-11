@@ -1,4 +1,5 @@
-int PADDING = -20;
+public class Main {
+  int PADDING = -20;
 int X_SPACING = 40;
 int X_INTERVAL_OFFSET = X_SPACING / 2;
 int Y_SPACING = 20;
@@ -64,22 +65,35 @@ void scale(int x, int y, float rotation, float size) {
   //ellipse(0, 0, size * 10, size * 15);
   beginShape();
   vertex(-10 * size, -10 * size);
-  quadraticVertex(0, 0, 10, -10 * size);
-  vertex(10 * size, 10 * size);
-  quadraticVertex(0,  0, -10, 10 * size);
-  vertex(-10 * size, -10 * size);
   curveVertex(-10 * size, -10 * size);
-  curveVertex(-9 * size, -10 * size);
-  curveVertex(0 * size, -5 * size);
-  curveVertex(9 * size, -10 * size);
+  curveVertex(-5 * size, -5 * size);
+  curveVertex(5 * size, -5 * size);
   curveVertex(10 * size, -10 * size);
+  vertex(10 * size, -10 * size);
+  vertex(10 * size, 10 * size);
   curveVertex(10 * size, 10 * size);
-  curveVertex(9 * size, 10 * size);
-  curveVertex(0 * size, 5 * size);
-  curveVertex(-9 * size, 10 * size);
+  curveVertex(5 * size, 5 * size);
+  curveVertex(-5 * size, 5 * size);
   curveVertex(-10 * size, 10 * size);
-  curveVertex(-10 * size, -10 * size);
+  vertex(-10 * size, 10 * size);
   vertex(-10 * size, -10 * size);
+  // vertex(-10 * size, -10 * size);
+  // quadraticVertex(0, 0, 10, -10 * size);
+  // vertex(10 * size, 10 * size);
+  // quadraticVertex(0,  0, -10, 10 * size);
+  // vertex(-10 * size, -10 * size);
+  // curveVertex(-10 * size, -10 * size);
+  // curveVertex(-9 * size, -10 * size);
+  // curveVertex(0 * size, -5 * size);
+  // curveVertex(9 * size, -10 * size);
+  // curveVertex(10 * size, -10 * size);
+  // curveVertex(10 * size, 10 * size);
+  // curveVertex(9 * size, 10 * size);
+  // curveVertex(0 * size, 5 * size);
+  // curveVertex(-9 * size, 10 * size);
+  // curveVertex(-10 * size, 10 * size);
+  // curveVertex(-10 * size, -10 * size);
+  // vertex(-10 * size, -10 * size);
   endShape(CLOSE);
   rotate(-rotation);
   translate(-x, -y);
@@ -92,11 +106,4 @@ int sign(int n) {
   return n / Math.abs(n);
 }
 
-
-
-
-
-
-
-
-
+}
